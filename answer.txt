@@ -1,0 +1,44 @@
+1.
+
+For Bigram Count
+
+  When the map function is called. if it is the first time running through the while loop, the string str1 is initialised to the first element in the string array. Then string str2 is initialised to the second element in the array, and str1 and str2 are joined together to form str3 which is pushed to the context.write. 
+	
+After that, the value that was in str2 is set to str1, and str2 is set to an empty String. This makes the last(second) element in a bigram move to the first position making space for another element to occupy str2 in the next iteration. When you now iterate through the rest array only str2 will be assigned a value.
+
+2. 
+
+For Map Tasks
+
+	I made a constructor class for TokenizerMapper, and every time the TokenizerMapper class is made, a boolean value called "hasPassed" is initialized to false. The first time the map function is called.  A check is made to see if "hasPassed" is true or false, when it is false a number and "zz______________________map Task Found_______________" is pushed into context.write, and also changes the boolean "hasPassed" to true. Which makes sure that it is called only once when Map class is made
+
+3.
+
+	solution for Map Task
+
+private  static Text track = new Text("zz______________________map Task Found_______________");
+
+TokenizerMapper() //constructor where the boolean is initialized
+	{
+		super();
+		hasPassed = false;
+	}
+
+public void map(){ // in the map fuction
+
+	if(!hasPassed)
+	{
+		context.write(track,one);
+		hasPassed = true;
+	}
+}
+
+
+
+4.
+
+zz______________________bigrams Found_______________	9386
+zz______________________map Task Found_______________	3
+ 
+
+
